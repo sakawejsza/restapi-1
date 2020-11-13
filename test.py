@@ -1,4 +1,8 @@
-#Skeleton for the CLI
+import requests
+import json
+from flask import Flask, jsonify, escape, request, Response
+host = '34.70.254.94' #this host needs to be updated to our correct IP address
+errors = 0
 import click
 
 
@@ -12,8 +16,8 @@ def cli():
               help= 'The phrase to translate to md5')
 def md5(phrase):
 	"""This will translate a given phrase to md5"""
-    print 'md5 run'
-	print number
+	t = requests.get(f'http://34.70.254.94/md5/phrase')
+	print t
     pass
 #####
 
